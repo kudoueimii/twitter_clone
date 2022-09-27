@@ -7,9 +7,14 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def create
-    Post.create(content: params[:post][:content])
+  def create(post_params)
+    Post.create()
     redirect_to new_post_path
   end
+
+  private
+  
+  def post_params
+    params.require(:post).permit(:content)
   
 end
