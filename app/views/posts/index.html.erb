@@ -1,5 +1,7 @@
 <h1>Tweets</h1>
 
+<p><%= notice %></p>
+
 <table>
   <tr>
     <th>Tweet</th>
@@ -8,6 +10,7 @@
   <tr>
     <td><%= post.content %></td>
     <td><%= link_to "Edit", edit_post_path(post.id)%></td>
+     <td><%= link_to "Delete", post_path(post.id), method: :delete %></td>
   </tr>
 <%end%>
 
