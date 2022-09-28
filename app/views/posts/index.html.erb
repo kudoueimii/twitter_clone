@@ -7,6 +7,10 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
+    <td><%= link_to "Edit", edit_post_path(post.id)%></td>
   </tr>
 <%end%>
+
 </table>  
+
+<td><%= link_to "+🕊", new_post_path %></td>
