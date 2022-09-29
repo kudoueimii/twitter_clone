@@ -16,9 +16,9 @@
     <%= form.text_field :content, placeholder: "What's happening?" %>
   </div>
   
-   <div class="field">
-    <%= form.label :day %>
-    <%= form.date_select :day, id: :post_day %>
+  <div class="time">
+    <%= update_at = DateTime.new; %>
+    <%= update_at.strftime("%H:%M:%S") %>
   </div>
   <div class = "button">
     <%= form.submit %>
