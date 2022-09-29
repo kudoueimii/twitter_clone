@@ -5,14 +5,13 @@ default: &default
 
 development:
   <<: *default
-  database: twitter_clone_development
+  database: contact_app_development
 
-test:
   <<: *default
-  database: twitter_clone_test
+  database: contact_app_test
 
 production:
   <<: *default
-  database: twitter_clone_production
-  username: twitter_clone
-  password: <%= ENV['TWITTER_CLONE_DATABASE_PASSWORD'] %>
+  database: contact_app_production
+  username: contact_app
+  password: <%= ENV['CONTACT_APP_DATABASE_PASSWORD'] %>

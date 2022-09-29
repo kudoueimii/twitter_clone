@@ -1,8 +1,9 @@
+<main>
 <h1>Tweets</h1>
 
 <p><%= notice %></p>
 
-<table>
+<table class = "table">
   <tr>
     <th>Tweet</th>
   </tr>
@@ -10,10 +11,11 @@
   <tr>
     <td><%= post.content %></td>
     <td><%= link_to "Edit", edit_post_path(post.id)%></td>
-     <td><%= link_to "Delete", post_path(post.id), method: :delete %></td>
+    <td><%= link_to "Delete", post_path(post.id), method: :delete %></td>
   </tr>
 <%end%>
 
 </table>  
 
-<td><%= link_to "+🕊", new_post_path %></td>
+<td class = "bird_button"><%= link_to "+🕊", new_post_path %></td>
+</main>

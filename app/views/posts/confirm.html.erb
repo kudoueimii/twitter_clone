@@ -1,21 +1,12 @@
 <h3>Tweet with the following content</h3>
 
 <%= form_with(model: @post, local: true) do |form| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-      <ul>
+  <div class = "confirm">
+    <%= form.hidden_field :content %>
 
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-   
-   <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content, placeholder: "What's happening?" %>
-  </div>
-  <%= form.submit %>
+    <p>Tweet: <%= @post.content %></p>
+    <%= form.submit 'Tweet' %>
+
+    <%= form.submit 'Back', name: 'back' %>
+  </div>  
 <% end %>

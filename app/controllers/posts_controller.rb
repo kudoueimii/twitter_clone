@@ -10,10 +10,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to posts_path, notice: "Created!"
-    else
+    if params[:back]
       render :new
+    else
+      if @post.save
+        redirect_to posts_path, notice: "Created!"
+      else
+        render :new
+      end
     end  
   end
 
@@ -37,7 +41,8 @@ class PostsController < ApplicationController
   end
 
   def confirm
-    @post = Post.new(blog_params)
+    @post = Post.new(post_params)
+    render :new if @post.invalid?
   end
 
   private
@@ -45,5 +50,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:content)
   end
-
 end
